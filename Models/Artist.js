@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Artist = Schema({
-    id:Number,
     name: String,
     description:String,
     image:String
