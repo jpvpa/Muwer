@@ -8,7 +8,8 @@ var Song = Schema({
     number:Number,
     name: String,
     duration:String,
-    image:String,
+    file:String,
+    explicit: Boolean,
     album: { type: Schema.ObjectId, ref: 'Album'}
 })
 
