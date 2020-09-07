@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-page {
+    background-color: #1A1A1A;
+}
+.bg-light {
+    background-color: #343C40 !important;
+}
+.border-radius{
+    border-radius: .6rem;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #9900cc;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(153,0,204,.25);
+}
+
+.btn-prin{
+    background-color: #9900cc !important;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(31, 45, 65, 0.2);
+
+}
+.text-red{
+    color: #FF1F3D !important;
+}
+
