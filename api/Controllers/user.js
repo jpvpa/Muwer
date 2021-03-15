@@ -81,6 +81,9 @@ function loginUser(req, res){
 function updateUser(req,res) {
     var userId = req.params.id;
     var update = req.body;
+    if(userId != req.user.sub){
+        return res.status(500).send({message: 'You are not allowed to update this user'});
+    }
     User.findByIdAndUpdate(userId, update, (err, userUpdated)=>{
         if(err){
             res.status(500).send({message: 'There was an error updating the user'});
@@ -107,7 +110,7 @@ function uploadImage(req,res) {
         var extSplit = fileName.split('\.');
         var fileExt = extSplit[1]
 
-        if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'gif'){
+        if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'gif' || fileExt == 'jpeg' || fileExt == 'JPG'){
             User.findByIdAndUpdate(userId, {image:fileName}, (err, userUpdated)=>{
                 if(!userUpdated){
                     res.status(404).send({message: 'User can not be updated'});

@@ -10,7 +10,6 @@ var Song = require('../Models/Song');
 
 function getArtist(req,res) {
     var artistId = req.params.id;
-
     Artist.findById(artistId,(err, artist)=>{
         if(err){
             res.status(500).send({message: 'Error'});
@@ -51,7 +50,7 @@ function getArtists(req,res) {
     }else{
         var page = 1;
     }
-    var itemsPerPage = 3;
+    var itemsPerPage = 4;
 
     Artist.find().sort('name').paginate(page, itemsPerPage, (err,artists,total) => {
         if(err){
