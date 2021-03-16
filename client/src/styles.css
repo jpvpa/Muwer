@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+.bg-page {
+    background-color: #1A1A1A !important;
+}
+.bg-light {
+    background-color: #343C40!important;
+}
+.border-radius{
+    border-radius: .6rem !important;
+}
+.aLink{
+    color:  #9900cc !important;
+}
+.aLink:hover{
+    color: #c61aff !important;
+}
+.bg-purple{
+    background-color: #9900cc !important;
+}
+.bg-input{
+    background-color: #505c62 !important;
+}
+mat-icon{
+    cursor: context-menu !important;
+}
+/* -----------FORM DESIGN---------- */
+.form-control:focus {
+    color: #495057 !important;
+    background-color: #fff;
+    border-color: #9900cc;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(153,0,204,.25);
+}
+/* ----------BTN PURPLE */
+.btn-prin{
+    background-color: #9900cc !important;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(31, 45, 65, 0.2);
+
+}
+.btn-red{
+    background-color: #FF1F3D !important;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(31, 45, 65, 0.2);
+
+}
+.text-red{
+    color: #FF1F3D !important;
+}
+/* --------SCROLL BAR----------- */
+::-webkit-scrollbar {
+    width: 5px;          
+}
+::-webkit-scrollbar-track {
+    background: #1A1A1A; 
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: #1d1d1d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1d1d1d;
+}
+/*-----Upload image-----*/
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.upload-btn-wrapper input[type=file] {
+font-size: 100px;
+position: absolute;
+left: 0;
+top: 0;
+opacity: 0;
+}
+
+/* html, body { height: 100%; } */
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

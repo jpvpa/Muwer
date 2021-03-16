@@ -1,0 +1,101 @@
+<!--<div class="row p-3">
+    <div class="col-12 col-md-6 p-0 pt-4 mt-5 pt-md-0 mt-md-0" >
+         <div class="list-group border-radius t text-white rounded-right border-0">
+            <li class="list-group-item shadow-sm bg-light text-white">
+                <b>Settings</b>
+            </li>
+            <button type="button" class="list-group-item d-flex list-group-item-action justify-content-between align-items-center bg-light text-white" (click)="showDiv.account = !showDiv.account; showDiv.email = false; showDiv.password = false; showDiv.subscription = false">
+                Account
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+            <button type="button" class="list-group-item d-flex list-group-item-action justify-content-between align-items-center bg-light text-white" (click)="showDiv.email = !showDiv.email; showDiv.account = false; showDiv.password = false; showDiv.subscription = false">
+                Email
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+            <button type="button" class="list-group-item d-flex list-group-item-action justify-content-between align-items-center bg-light text-white" (click)="showDiv.password = !showDiv.password; showDiv.email = false; showDiv.account = false; showDiv.subscription = false">
+                Password
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+            <button type="button" class="list-group-item d-flex list-group-item-action justify-content-between align-items-center bg-light text-white" (click)="showDiv.subscription = !showDiv.subscription; showDiv.email = false; showDiv.account = false; showDiv.password = false">
+                Subscription
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div> -->
+   <!--  </div>
+    <div class="col-12 col-md-6 p-0">
+        <div class="card h-100 border-radius rounded-left bg-light border-0" *ngIf="showDiv.account">
+            <div class="form-group mx-3 mt-3">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control border-radius border-0 bg-input text-white p-1" [(ngModel)]="userRegister.name" #name="ngModel">
+            </div>
+            <div class="form-group mx-3">
+                <label>Surname</label>
+                <input type="text" name="surname" class="form-control border-radius border-0 bg-input text-white p-1" [(ngModel)]="userRegister.surname" #surname="ngModel">
+            </div>
+
+        </div>
+        <div class="card h-100 border-radius rounded-left bg-light border-0" *ngIf="showDiv.email">
+            <div class="form-group m-3">
+                <label>Email</label>
+                <input type="text" name="email" class="form-control border-radius border-0 bg-input text-white p-1" [(ngModel)]="userRegister.email" #email="ngModel">
+            </div>
+        </div>
+        <div class="card h-100 border-radius rounded-left bg-light border-0" *ngIf="showDiv.password">
+            <div class="form-group m-3">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control border-radius border-0 bg-input text-white p-1" [(ngModel)]="userRegister.password" #password="ngModel" minlength="6">
+                <div *ngIf="signUpForm.submitted && password.invalid" class="invalid-feedback">
+                    <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+        </div>
+        <div class="card h-100 border-radius rounded-left bg-light border-0" *ngIf="showDiv.subscription">
+            <label class="m-3">Subscription</label>
+        </div>
+        
+    </div>
+</div>
+ -->
+ <div class="card bg-light text-white border-radius p-4 pt-4 mt-5 pt-md-0 mt-md-3">
+     <h2>Settings</h2>
+     <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMessage">
+        <strong>Error</strong> {{errorMessage}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="alertMessage">
+        <strong>Success! </strong> {{alertMessage}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     <form #updateForm ="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control border-radius border-0 bg-input text-white p-1" [(ngModel)]="user.name" #name="ngModel" required>
+          </div>
+          <div class="form-group">
+            <label>Surname</label>
+            <input type="text" name="surname" class="form-control border-radius border-0 bg-input text-white p-1" [(ngModel)]="user.surname" #surname="ngModel" required>
+          </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" name="email" class="form-control border-radius border-0 bg-input text-white p-1" [(ngModel)]="user.email" #email="ngModel" required email>
+        </div>
+        <div class="row p-3 d-flex justify-content-center justify-content-md-start align-items-center">
+            <div class="col-md-3 w-100 p-0 m-0">
+                <div class="image_for_edit d-flex justify-content-center" *ngIf="user.image != 'null';">
+                    <img src="{{url+'get-image-user/'+user.image}}" alt="avatar" class="rounded-circle icon image-size" width="50%" height="50%">
+                </div>
+            </div>
+            <div class="upload-btn-wrapper p-3">
+                <span class=" btn btn-red border-radius text-white" for ="uploadFile" >Change Image</span>
+                <input id ="uploadFile" type="file" class="form-control rounded-circle icon" name="myfile" (change)="fileChangeEvent($event)"/>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-prin rounded-pill border-0 text-white w-75 p-2 p-md-3">Update</button>
+        </div>
+    </form>
+ </div>

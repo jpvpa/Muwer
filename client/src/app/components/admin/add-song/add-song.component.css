@@ -1,0 +1,16 @@
+.form-switch .form-check-input {
+    width: 3em;
+}
+.form-check-input:focus {
+    border-color:#fd7587 !important;
+    box-shadow: 0 0 0 0.25rem #f4433666 !important;
+}
+.form-check-input {
+    width: 1em;
+    height: 1.5em;
+    background-color: #505c62 !important;
+}
+.form-check-input:checked {
+    background-color: #FF1F3D !important;
+    border-color: #FF1F3D !important;
+}

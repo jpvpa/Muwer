@@ -1,0 +1,51 @@
+<body class="bg-page container pt-5 pt-md-3">
+    <h1 class="pt-4 pt-md-3 text-white">{{titulo}}</h1>
+    <ul class="list-group text-white border-0 border-radius my-4 my-md-2 ">
+        <li *ngFor="let artist of artists" class="list-group-item bg-light">
+            <div class="row justify-content-between">
+                <div class="col-12">
+                    <div class="media">
+                        <img src="{{url+'get-image-artist/'+artist.image}}" class="mr-3 rounded-circle artistImage" width=10% height=10% style="object-fit: cover;">
+                        <div class="media-body align-items-start">
+                            <h4 class="mt-0">{{artist.name}}</h4>
+                            <p>
+
+                                <span class="material-icons" width=8%><a class="text-decoration-none aLink" [routerLink]="['/artist-detail',artist._id]">remove_red_eye</a></span>
+                                <span class="material-icons" width=8%> <a class="text-decoration-none aLink" [routerLink]="['/edit-artist',artist._id]">edit</a> </span>
+                                <span class="material-icons" width=8% style="cursor: context-menu;"> <a class="text-decoration-none aLink" (click)="onDelete(artist._id)">delete</a> </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seguro" *ngIf="confirmado == artist._id">
+                <div class="row py-3" >
+                    <div class="col-md-1"><button class="btn btn-prin border-radius border-0 text-white p-2 p-md-3" (click)="onDeleteArtist(artist._id)">Delete</button></div>
+                    <div class="col-md-1"><button class="btn btn-red border-radius border-0 text-white p-2 p-md-3" (click)="onCancelArtist()">Cancel</button></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="list-group text-white border-0 border-radius my-4 my-md-2">
+        <li class="list-group-item bg-light d-flex justify-content-center align-items-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination bg-input">
+                  <li class="page-item">
+                    <a class="page-link" [routerLink]="['/artist-crud',prev_page]" routerLinkActive="actived" tabindex="-1" aria-disabled="true">Previous</a>
+                  </li>
+                  <!--<li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+                  <li class="page-item">
+                    <a class="page-link" [routerLink]="['/artist-crud',next_page]" routerLinkActive="actived">Next</a>
+                  </li>
+                </ul>
+              </nav>
+        </li>
+    </ul>
+    <div class="fabi" id="masterfab">
+            <mat-icon class="icon add text-center pt-4" [routerLink]="['/add-artist']">
+                add
+            </mat-icon>
+    </div>
+</body>

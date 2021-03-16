@@ -1,0 +1,116 @@
+.btn{
+    border-radius: 0rem;
+}
+.form-control{
+    border-radius: 0rem;
+}
+.border-right{
+    border-top-right-radius:1rem;
+    border-bottom-right-radius:1rem;
+}
+.border-left{
+    border-top-left-radius:1rem;
+    border-bottom-left-radius:1rem;
+}
+.form{
+    width: 100%;
+}
+.ico mat-icon:hover{
+    color: #9900cc;
+}
+.ico mat-icon{
+    transition:all 0.3s ease;
+}
+.ico mat-icon:hover{
+    transform: rotateZ(-10deg);
+    transition:all 0.3s ease;
+}
+.ico mat-icon.set:hover{
+    transform: rotateZ(-60deg);
+    transition:all 0.3s ease;
+}
+.rounded-rad{
+    border-radius: 1.3rem;
+}
+.bg-purple{
+    background-color: #9900cc;
+}
+.active{
+    color: #fff;
+    border: none;
+    background-color: #9900cc !important;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+.image-size{
+    width: 40%;
+    height: 40%;
+}
+.actived{
+    border: none;
+    color: #FF1F3D !important;
+}
+@media (max-width: 770px) and (min-width: 431px){
+    .mat-icon{
+        height: auto;
+    }
+    .icon{
+        width: 1.75rem;
+        font-size: 1.75rem;
+    }
+    .imgNav{
+        width: 2rem;
+    }
+    .image-size{
+        width: 50%;
+        height: 50%;
+    }
+}
+@media (max-width: 430px) and (min-width: 319px){
+    .icon{
+        width: 1.75rem;
+        font-size: 1.75rem;
+    }
+    .mat-icon{
+        height: auto;
+    }
+    .imgNav{
+        width: 2rem;
+    }
+    .image-size{
+        width: 10%;
+        height: 10%;
+    }
+}
+@media(max-width: 320px){
+    .icon{
+        width: 1.75rem;
+        font-size: 1.75rem;
+    }
+    .mat-icon{
+        height: auto;
+    }
+    .imgNav{
+        width: 2rem;
+    }
+    .image-size{
+        width: 10%;
+        height: 10%;
+    }
+}
+.sidebar-sticky {
+    height: 100%;
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: sticky;
+}
+.sidebardos{
+    height: 62%;
+}
+.list:hover{
+    color: #9900cc;
+}

@@ -1,0 +1,19 @@
+.imageNotFound{
+    width: 70%;
+}
+
+@media (max-width: 770px) and (min-width: 431px){
+    .imageNotFound{
+        width: 70%;
+    }
+}
+@media (max-width: 430px) and (min-width: 319px){
+    .imageNotFound{
+        width: 20rem;
+    }
+}
+@media(max-width: 320px){
+    .imageNotFound{
+        width: 100%;
+    }
+}

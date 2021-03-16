@@ -1,0 +1,61 @@
+.artistImage{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+.like{
+    color: #9900cc;
+}
+td img{
+    width: 12rem;
+    border-radius: .5rem;
+}
+.table td, .table th {
+    border-top: 1px solid #1A1A1A;
+}
+.table-dark {
+    color: #fff;
+    background-color: #1A1A1A;
+}
+.table{
+    width: auto;
+}
+.imagen{
+    transition: .5s ease;
+}
+.button,.delete,.edit {
+    display: none;
+    transition: .5s ease;
+}
+.title{
+    display: none;
+    transition: .5s ease;
+}
+.wrapper:hover .imagen{
+    opacity: 0.6;
+    transition: .5s ease;
+}
+.wrapper:hover .button {
+  display: inline-block;
+  transition: .5s ease;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper:hover .delete {
+    display: inline-block;
+    transition: .5s ease;
+    top: 12%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+  }
+  .wrapper:hover .edit {
+    display: inline-block;
+    transition: .5s ease;
+    top: 12%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+  }
+.play{
+    font-size: 3rem;
+}

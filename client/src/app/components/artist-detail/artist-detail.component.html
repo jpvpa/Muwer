@@ -1,0 +1,115 @@
+<body class="bg-page">
+    <div *ngIf="artist">
+        <section class="d-flex align-items-center justify-content-start">
+            <div class="row w-100">
+                <div class="col-md-4 py-5 p-3 text-center">
+                    <img src="{{url+'get-image-artist/'+artist.image}}" class="mr-3 rounded-circle artistImage mx-auto" width=80% height=80% style="object-fit: cover;">
+                </div>
+                <div class="col-md-8 py-5 align-items-center">
+                    <span class="text-white text align-middle h1 align-items-center display-3">{{artist.name}}</span>
+                    <div class="overflow-auto h-50">
+                        <p class=" text-white">{{artist.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div *ngIf="identity && identity.role == 'ROLE_USER'">
+            <button [routerLink]="['/add-album',artist._id]" routerLinkActive="actived" class="btn btn-prin rounded-pill border-0 text-white p-2 p-md-3 my-2">Add Album</button>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-7">
+                <section>
+                    <h2 class="text-white text">Songs</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-group text-white border-0 border-radius my-2">
+                                <li class="list-group-item bg-light d-flex justify-content-between align-items-center" >
+                                    <div class="media">
+                                        <img src="../../../assets/images/smile.jpg" class="mr-3 rounded-lg imgSong" width="15%">
+                                        <div class="media-body">
+                                            <h6 class="mt-0">Cry About It Later</h6>
+                                            Katy Perry
+                                        </div>
+                                    </div>
+                                    <mat-icon class="like">trip_origin</mat-icon>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="text-white text">Albums</h2>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-dark border-0">
+                            <tbody>
+                                <tr>
+                                    <td *ngFor="let album of albums">
+                                        <div class="seguro" *ngIf="confirmado == album._id">
+                                            <div class="row py-3">
+                                                <div class="col-md-4"><button class="btn-sm btn-prin border-radius border-0 text-white" (click)="onDeleteAlbum(artist._id)">Delete</button></div>
+                                                <div class="col-md-4"><button class="btn-sm btn-red border-radius border-0 text-white" (click)="onCancelAlbum()">Cancel</button></div>
+                                            </div>
+                                        </div>
+                                        <div class="wrapper" (click)="albumSelected(album._id)">
+                                            <div class="position-relative">
+                                                <img src="{{url+'get-image-album/'+album.image}}" alt="" class="p-1 mx-auto imagen">
+                                                <div class="pt-2 text-center mx-auto d-flex justify-content-center">
+                                                    <span class="font-weight-bold">{{album.title}}</span><br>
+                                                </div>
+                                                <div class="text-center mx-auto d-flex justify-content-center">
+                                                    <span [routerLink]="['/detail-artist',album.artist['_id']]">{{album.artist['name']}}</span>
+                                                </div>
+                                                <div class="delete position-absolute" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+                                                    <span class="material-icons" width=15% height=15% style="cursor: context-menu;"  [routerLink]="['/edit-album',album._id]" style="z-index: 5;">mode_edit_outline</span>
+                                                </div>
+                                                <div class="edit position-absolute" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+                                                    <span for="btnPop" class="material-icons" width=15% height=15% style="cursor: context-menu;"  (click)="onDelete(album._id)" style="z-index: 5;">remove_circle</span>
+                                                    
+                                                </div>
+                                                <div class="button position-absolute">
+                                                    <mat-icon class="button play">play_circle_filled</mat-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <div class="col-12 col-md-5 col-lg-4 pl-md-2">
+               <div class="card h-100 border-radius bg-light border-0" *ngIf="albumSelect">
+                    <div class="media p-2 text-white">
+                        <img src="{{url+'get-image-album/'+album.image}}" class="mr-3 rounded-lg " width="35%">
+                        <div class="media-body">
+                          <h5 class="mt-0">{{album.title}}</h5>
+                          <p class="p-0 m-0 h6">{{album.artist['name']}}</p>
+                          <p class="p-0 m-0">({{album.year}}) {{album.duration}}</p>
+                          <p class="p-0 m-0 blockquote-footer text-white">{{album.label}}</p>
+                          <p class="h6 pt-2"><button class="btn-sm btn-red border-radius border-0 text-white" [routerLink]="['/add-song',album._id]">Add Song</button></p>
+                        </div>
+                    </div>
+                    <ul class="list-group text-white my-2">
+                        <!--<li class="list-group-item bg-light d-flex justify-content-between align-items-center">Never Really Over <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Cry About It Later <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Teary Eyes <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Daisies <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Resilient <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Not the End of the World <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Smile <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Champange Problems <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Tucked <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Harleys in Hawaii <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">Only Love <mat-icon class="like">trip_origin</mat-icon></li>
+                        <li class="list-group-item bg-light d-flex justify-content-between align-items-center">What Makes a Woman <mat-icon class="like">trip_origin</mat-icon></li>-->
+                    </ul>
+                </div>
+                <div class="card h-100 border-radius bg-light border-0" *ngIf="!albumSelect">
+                    <img src="../../../assets/images/undraw_audio_player_re_cl20.svg" alt="" srcset="" class="p-5">
+                    <p class="h5 text-center text-white">Choose a song or album and play it</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

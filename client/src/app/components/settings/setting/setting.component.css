@@ -1,0 +1,43 @@
+a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover {
+    background-color: #444e53!important;
+}
+.rounded-right{
+    border-top-right-radius:0!important;
+    border-bottom-right-radius:0!important;
+}
+.rounded-left {
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+}
+.bg-input{
+    background-color: #505c62;
+}
+body{
+    height: 100%;
+}
+
+
+/*@media (min-width: 775px){
+    .image-size{
+        width: 10%;
+        height: 10%;
+    }
+}
+@media (max-width: 770px) and (min-width: 431px){
+    .image-size{
+        width: 15%;
+        height: 15%;
+    }
+}
+@media (max-width: 430px) and (min-width: 319px){
+    .image-size{
+        width: 70%;
+        height: 70%;
+    }
+}
+@media(max-width: 320px){
+    .image-size{
+        width: 70%;
+        height: 70%;
+    }
+}*/

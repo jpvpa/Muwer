@@ -1,0 +1,96 @@
+td img{
+    width: 12rem;
+    border-radius: .5rem;
+}
+.table td, .table th {
+    border-top: 1px solid #1A1A1A;
+}
+.table-dark {
+    color: #fff;
+    background-color: #1A1A1A;
+}
+.artistImage{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    text-align: center;
+}
+.wrapper:hover .artistImage{
+    opacity: 0.7;
+    box-shadow: 0 0 3rem  #2b2a2a;
+    transition: .5s ease;
+}
+.wrapper:hover .txt:hover{
+    color: #9900cc;
+    transition: .5s ease;
+}
+.button {
+    display: none;
+    transition: .5s ease;
+}
+.imagen{
+    transition: .5s ease;
+}
+.wrapper:hover .imagen{
+    opacity: 0.6;
+    transition: .5s ease;
+}
+.wrapper:hover .button {
+  display: inline-block;
+  transition: .5s ease;
+  top: 60%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+.play{
+    font-size: 3rem;
+}
+.like{
+    color: #9900cc;
+}
+@media (max-width: 1024px) and (min-width: 775px){
+    .imgSong{
+        width: 20%;
+    }
+    .artistImage{
+        width: 12rem;
+        height: 12rem;
+        object-fit: cover;
+        text-align: center;
+    }
+    
+}
+@media (max-width: 770px) and (min-width: 431px){
+    .imgSong{
+        width: 20%;
+    }
+    .artistImage{
+        width: 11rem;
+        height: 11rem;
+        object-fit: cover;
+        text-align: center;
+    }
+    
+}
+@media (max-width: 430px) and (min-width: 319px){
+    .imgSong{
+        width: 18%;
+    }
+    .artistImage{
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+        text-align: center;
+    }
+}
+@media(max-width: 320px){
+    .imgSong{
+        width: 20%;
+    }
+    .artistImage{
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+        text-align: center;
+    }
+}

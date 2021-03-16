@@ -1,0 +1,95 @@
+.fabi{
+	background: #FF1F3D;
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+    text-align:center;
+    vertical-align: middle;
+	color: #FFF;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5),3px 3px 3px rgba(0,0,0,0.25);
+    position: fixed;
+	bottom: calc(1 / 4 * 3 *64px);
+	right: calc(1 / 4 * 3 *64px);
+	font-size: 3em;
+	display: inline-block;
+	cursor: default;
+}
+.fabi:hover{
+    background: #ff344f;
+}
+.icon{
+    
+    width: 2.5rem;
+    font-size: 2.5rem;
+}
+
+td img{
+    width: 12rem;
+    border-radius: .5rem;
+}
+.table-dark {
+    color: #fff;
+    background-color: #1A1A1A;
+}
+.artistImage{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+}
+.button {
+    display: none;
+    transition: .5s ease;
+}
+.imagen{
+    transition: .5s ease;
+}
+.wrapper:hover .imagen{
+    opacity: 0.6;
+    transition: .5s ease;
+}
+.wrapper:hover .button {
+  display: inline-block;
+  transition: .5s ease;
+  top: 60%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+
+mat-icon:hover{
+    color: #9900cc;
+}
+mat-icon{
+    width: 40px !important;
+    height: 40px !important;
+    transition:all 0.3s ease;
+}
+.page-link {
+    background-color: transparent !important;
+    border-color: #FF1F3D !important;
+    color: white !important;
+}   
+@media (max-width: 770px) and (min-width: 431px){
+    .artistImage{
+        width: 5rem;
+        height: 5rem;
+        object-fit: cover;
+    }
+    
+}
+@media (max-width: 430px) and (min-width: 319px){
+    .artistImage{
+        width: 12rem;
+        height: 12rem;
+        object-fit: cover;
+    }
+    
+}
+@media(max-width: 320px){
+    .artistImage{
+        width: 12rem;
+        height: 12rem;
+        object-fit: cover;
+    }
+    
+}

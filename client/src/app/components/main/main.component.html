@@ -1,0 +1,106 @@
+<body class="bg-page text-white h-100">
+    <div class="col-12 p-0 d-block d-md-none">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light mb-3 fixed-top">
+            <button class="navbar-toggler border-0 px-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <img id="identity_image" src="{{url+'get-image-user/'+identity.image}}" alt="avatar" class="rounded-circle icon imgNav">
+            </button>
+            <h5><b>Discover</b></h5>
+            <a class="navbar-brand" href="#"><mat-icon class="not">notifications_none</mat-icon></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="list-group list-group-flush text-white border-0 border-radius my-2">
+                <li class="list-group-item bg-light d-flex align-items-center px-0" style="cursor: context-menu;" [routerLink]="['/for-you']" >
+                    <mat-icon class="icon">public</mat-icon>
+                    <span class="ml-1 d-md-none d-lg-block">Discover</span>
+                </li>
+                <li class="list-group-item bg-light d-flex align-items-center px-0"  style="cursor: context-menu;">
+                    <mat-icon class="icon">favorite</mat-icon> 
+                    <span class="ml-1 d-md-none d-lg-block">Favorite</span>
+                </li>
+                <li class="list-group-item bg-light d-flex align-items-center px-0" style="cursor: context-menu;"> 
+                    <mat-icon class="icon">playlist_play</mat-icon>
+                    <span class="ml-1 d-md-none d-lg-block">Playlist</span>
+                </li>
+                <li class="list-group-item bg-light d-flex align-items-center px-0"  style="cursor: context-menu;" [routerLink]="['/setting']" routerLinkActive="actived" > <mat-icon class="icon">settings</mat-icon> <span class="ml-1 d-md-none d-lg-block">Settings</span></li>
+                <li class="list-group-item bg-light d-flex align-items-center text-left px-0"  style="cursor: context-menu;"> <mat-icon class="icon">login</mat-icon> <span class="ml-1 d-md-none d-lg-block" (click)="logOut()">Logout</span></li>
+              </ul>
+            </div>
+        </nav>
+    </div>
+
+    <section class="container-fluid ">
+        <div class="row p-1 p-md-3 p-lg-4 ">
+            <div class="col-12 col-md-2 col-lg-2 p-lg-2 d-none d-md-block sidebar-sticky">
+                <div class="col-12 p-0">
+                    <div class="card bg-light text-white border-0 border-radius mb-2">
+                        <div class="card-body p-md-2 p-lg-3 text-md-center text-lg-left">
+                          <img src="../../../assets/images/record.png" class="icon" width="30%" alt="logo" srcset="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 p-0 card sidebardos bg-light border-radius">
+                    <ul class="list-group text-white border-0 border-radius my-2">
+                        <li class="list-group-item bg-light d-flex align-items-center p-md-2 p-lg-3 justify-content-md-center justify-content-lg-start border-0 list" style="cursor: context-menu;" [routerLink]="['/for-you']" routerLinkActive="actived" >
+                            <mat-icon class="icon">public</mat-icon>
+                            <span class="ml-1 d-md-none d-lg-block">Discover</span>
+                        </li>
+                        <li class="list-group-item bg-light d-flex align-items-center p-md-2 p-lg-3 justify-content-md-center justify-content-lg-start border-0 list" style="cursor: context-menu;">
+                            <mat-icon class="icon">favorite</mat-icon>
+                            <span class="ml-1 d-md-none d-lg-block">Favorites</span>
+                        </li>
+                        <li class="list-group-item bg-light d-flex align-items-center p-md-2 p-lg-3 justify-content-md-center justify-content-lg-start border-0 list" style="cursor: context-menu;">
+                            <mat-icon class="icon">playlist_play</mat-icon> 
+                            <span class="ml-1 d-md-none d-lg-block">Playlists</span>
+                        </li>
+                        <!--*ngIf="identity && identity.role == 'ROLE_ADMIN'"-->
+                        <li *ngIf="identity && identity.role == 'ROLE_USER'" class="list-group-item bg-light d-flex align-items-center p-md-2 p-lg-3 justify-content-md-center justify-content-lg-start border-0 list" style="cursor: context-menu;" [routerLink]="['/artist-crud',1]" routerLinkActive="actived">
+                            <mat-icon class="icon">manage_accounts</mat-icon>
+                            <span class="ml-1 d-md-none d-lg-block">Admin</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 p-0">
+                    <div class="card bg-light text-white border-0 border-radius my-2" id="identity_user">
+                        <div class="card-body p-md-2 p-lg-3">
+                            <div  class="user-image text-center">
+                                <img src="{{url+'get-image-user/'+identity.image}}" alt="avatar" class="rounded-circle icon image-size" id="identity_image">
+                            </div>
+                          <div class="text-center pt-2">
+                            <span class="d-md-none d-lg-block" id="identity_name" >{{identity.name}}</span>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-10 col-12">
+                <div class="row ">
+                    <div class="col-12 col-md-9 d-none d-md-block">
+                        <form class="form-inline  my-lg-0 h-100">
+                            <input class="form-control w-75 border-0 border-left bg-light text-white" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn my-2 my-sm-0 p-1 border-right border-0 bg-purple text-whit w-25" type="submit">
+                                <mat-icon class="align-middle text-white" style="margin: .20rem;">search</mat-icon>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-md-3 align-self-center d-none d-md-block">
+                        <div class="row">
+                            <div class="col-4 text-center ico" style="cursor: context-menu;">
+                                <mat-icon class="not">notifications_none</mat-icon>
+                            </div>
+                            <div class="col-4 text-center ico" style="cursor: context-menu;" [routerLink]="['/setting']" routerLinkActive="actived">
+                                    <mat-icon class="set">settings</mat-icon>
+                            </div>
+                            <div class="col-4 text-center ico" style="cursor: context-menu;" (click)="logOut()">
+                                <mat-icon class="login">login</mat-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                            <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
